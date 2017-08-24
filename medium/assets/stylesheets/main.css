@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+* {
+  font-family: 'Russo One', sans-serif;
+  color: lightgray;
+  text-shadow: 2px 2px black;
+}
+body {
+  display: flex;
+  background-image: url('https://ak5.picdn.net/shutterstock/videos/473089/thumb/1.jpg?i10c=img.resize(height:160)');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  justify-content: center;
+}
+
+button {
+  background-color: black;
+  color: lightgray;
+  border-radius: 5px;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+}
+h2 {
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: lighter;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+#content {
+  display: flex;
+  background-color: rgba(211, 211, 211, 0.4);
+  width: 70%;
+  text-align: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 700px) {
+  .right {
+    text-align: left;
+  }
+}

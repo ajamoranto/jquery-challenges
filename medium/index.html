@@ -2,6 +2,10 @@
 <html>
 <head>
   <title>JS Game Challenge</title>
+  <audio id="shotSound"><source src="assets/audio/sound.mp3"></audio>
+  <audio id="scoreSound"><source src="assets/audio/score.mp3"></audio>
+  <audio id="buzzer"><source src="assets/audio/buzzer.mp3"></audio>
+  <link rel="stylesheet" href="assets/stylesheets/main.css">
   <style type="text/css">
     .hide {
       display: none;
@@ -18,40 +22,50 @@
   </style>
 </head>
 <body>
-  <div style="width: 700px;margin: 0 auto;">
-    <h1 style="margin-bottom:5px">Hockey, JavaScript, and jQuery oh My!</h1>
-    <h2 style="margin-top: 0">...the game!</h2>
-    <div style="margin: 0 auto;text-align:center">
-      <button id="reset">RESET</button><br>
-      NUMBER OF RESETS: <span id="num-resets">0</span>
+  <div id="content">
+    <div style="width: 700px;margin: 0 auto;">
+      <h1 style="margin-bottom:5px">Sportsball, JavaScript, and the DOM oh My!</h1>
+      <h2 style="margin-top: 0">...the game!</h2>
+      <div style="margin: 0 auto;text-align:center">
+        <button id="reset">RESET</button><br>
+        NUMBER OF RESETS: <span id="num-resets">0</span>
+      </div>
+      <div class="clear"></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+        <div class="left">
+          <h2>
+            Fighting Mongooses
+          </h2>
+          <div class="hits">
+            SHOTS TAKEN: <span id="teamone-numshots">0</span><br>
+            GOALS: <span id="teamone-numhits">0</span>
+          </div>
+          <div>
+            <button id="teamone-shoot">SHOOT</button>
+          </div>
+        </div>
+      <div class="right">
+        <h2>
+          Coney Island Whitefish
+        </h2>
+        <div class="hits">
+          SHOTS TAKEN: <span id="teamtwo-numshots">0</span><br>
+          GOALS: <span id="teamtwo-numhits">0</span>
+        </div>
+        <div>
+          <button id="teamtwo-shoot">SHOOT</button>
+        </div>
+      </div>
+      <div class="clear"></div>
     </div>
-    <div class="clear"></div>
-    <div class="left">
-      <h2>
-        Team 1
-      </h2>
-      <div class="hits">
-        SHOTS TAKEN: <span id="teamone-numshots">0</span><br>
-        GOALS: <span id="teamone-numhits">0</span>
-      </div>
-      <div>
-        <button id="teamone-shoot">SHOOT</button>
-      </div>
-    </div>
-    <div class="right">
-      <h2>
-        Team 2
-      </h2>
-      <div class="hits">
-        SHOTS TAKEN: <span id="teamtwo-numshots">0</span><br>
-        GOALS: <span id="teamtwo-numhits">0</span>
-      </div>
-      <div>
-        <button id="teamtwo-shoot">SHOOT</button>
-      </div>
-    </div>
-    <div class="clear"></div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Link your JS file using the script tag -->
   <script src="assets/javascript/medium.js"></script>
 </body>
 </html>

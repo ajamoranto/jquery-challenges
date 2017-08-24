@@ -34,8 +34,40 @@
    //jQuery equivelent to window.onload = function{}
    //code in here wont run until page loads
    $(function(){
+    //  * 1. Any time someone clicks on the title at the top "feed template,"
+    //  *    make the color of the "feed template" text change from black to red
+    //  *    and then from red to black when clicked again.
+    let feedText = $('div').children("h1");
 
+    feedText.click(function(){
+      if ($(this).attr('data-click-state') == 1){
+      $(this).attr('data-click-state', 0);
+      $(this).css({"color": "black"});
+      console.log("Changed to Black");
+    } else {
+      $(this).attr('data-click-state', 1);
+      $(this).css({"color": "red"})
+      console.log("Changed to Red")
+    }
+    })
 
+    // 2. The links on the side of the page – "your name," "section 1," "section 2," etc. –
+    // *    hide every odd-numbered link in the menu.
+    let sideLinks = $('.title:even');
+    sideLinks.hide();
+
+    // * 3. Change every instance of the word "bacon" on the page to be "LASER VISION"
+    $('.large-10.columns p').each(function(){
+      let text = $(this).text();
+      text = text.replace("Bacon", "LASER VISION");
+      $(this).text(text)
+    })
+
+    // * 4. Delete the last two posts in the middle section (they have a CSS class "post"
+    $('.post').slice(-3).remove();
+
+    // * 5. Remove the images in the right column
+    $('.hide-for-small img').remove()
 
    })
 

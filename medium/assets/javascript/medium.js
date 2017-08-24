@@ -41,9 +41,85 @@
   //jQuery equivelent to window.onload = function{}
   //code in here wont run until page loads
   $(function(){
+    // background
+    let changeBg = $("#content");
+    //Team One
+    let oneShoot = $("#teamone-shoot");
+    let oneShots = $("#teamone-numshots");
+    let oneGoals = $("#teamone-numhits");
+    //Team Two
+    let twoShoot = $("#teamtwo-shoot");
+    let twoShots = $("#teamtwo-numshots");
+    let twoGoals = $("#teamtwo-numhits");
+    //Reset
+    let reset = $("#reset");
+    let resetCounter = $("#num-resets");
+    //Sound
+    // let shotSound = $("#shotSound");
+    // let scoreSound = $("#scoreSound");
+    // let buzzer = $("#buzzer");
+    let shotSound = document.querySelector("#shotSound");
+    let scoreSound = document.querySelector("#scoreSound");
+    let buzzer = document.querySelector("#buzzer");
+
+
+    //Team One Function
+    oneShoot.click("click", function(){
+
+      shotSound.play();
+
+      oneShots.html(parseInt(oneShots.html())+ 1)
+
+      let shot = (Math.floor(Math.random() * 2) == 0);
+      if (shot){
+        oneGoals.html(parseInt(oneGoals.html()) + 1);
+        changeBg.css("background-color","rgba(242, 130, 124, 0.4)");
+        scoreSound.play();
+      }
+    })
+
+    //Team Two Function
+    twoShoot.click("click", function(){
+
+      shotSound.play();
+
+      twoShots.html(parseInt(twoShots.html())+ 1)
+
+      let shot = (Math.floor(Math.random() * 2) == 0);
+      if (shot){
+        twoGoals.html(parseInt(twoGoals.html()) + 1);
+        changeBg.css("background-color","rgba(124, 242, 124, 0.4)");
+        scoreSound.play();
+      }
+    })
+
+    //Reset Function
+    reset.click("click", function(){
+
+      resetCounter.html(parseInt(resetCounter.html()) + 1);
+
+      buzzer.play();
+
+      if (oneGoals.html() > twoGoals.html()) {
+        alert("Fighting Mongooses Win!")
+      } else if (twoGoals.html() > oneGoals.html()) {
+        alert("Coney Island Whitefish Win!")
+      } else {
+        alert("No one likes a draw...")
+      }
+
+      oneShots.html(0);
+      oneGoals.html(0);
+      twoShots.html(0);
+      twoGoals.html(0);
+
+      changeBg.css("background-color", "rgba(211, 211, 211, 0.4)");
+
+    })
 
 
 
-  })
+
+    })
 
 })();
